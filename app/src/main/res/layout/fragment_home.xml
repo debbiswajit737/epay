@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,26 +33,57 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-
-
+        <androidx.cardview.widget.CardView
+            app:cardPreventCornerOverlap="false"
+            android:id="@+id/card_message"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardCornerRadius="8dp"
+            android:paddingEnd="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/card_adhar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPager2">
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:gravity="center"
+            android:background="@color/white"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:drawableStart="@drawable/baseline_notifications_24"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="This is a sample message. test aaaaa asfdsf fgfgfg fgfgf fgfg fgfg fgfg fgfg fgfg fgf fgfg fgf gf"
+             />
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_adhar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="9dp"
             android:elevation="8dp"
+            android:layout_marginTop="20dp"
             app:cardCornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewPager2">
+            app:layout_constraintTop_toBottomOf="@+id/card_message">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/title_header">
+
                 <TextView
                     android:id="@+id/tv_title"
                     android:layout_width="match_parent"
@@ -71,15 +103,14 @@
                     android:src="@drawable/arrow_drop_down"
 
                     app:layout_constraintEnd_toEndOf="@+id/tv_title"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
                     android:id="@+id/ll_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -97,11 +128,13 @@
                             android:layout_weight="0.1"
 
                             android:orientation="vertical">
+
                             <LinearLayout
-                                android:layout_gravity="center_horizontal"
-                                android:background="@drawable/circle_shape"
                                 android:layout_width="40dp"
-                                android:layout_height="40dp">
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_shape">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -109,6 +142,7 @@
                                     android:src="@drawable/db_balance"
                                     app:tint="#2196F3" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -128,11 +162,13 @@
                             android:layout_weight="0.1"
 
                             android:orientation="vertical">
+
                             <LinearLayout
-                                android:layout_gravity="center_horizontal"
-                                android:background="@drawable/circle_shape"
                                 android:layout_width="40dp"
-                                android:layout_height="40dp">
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_shape">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -140,6 +176,7 @@
                                     android:src="@drawable/db_balance"
                                     app:tint="#2196F3" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -159,11 +196,13 @@
                             android:layout_weight="0.1"
 
                             android:orientation="vertical">
+
                             <LinearLayout
-                                android:layout_gravity="center_horizontal"
-                                android:background="@drawable/circle_shape"
                                 android:layout_width="40dp"
-                                android:layout_height="40dp">
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_shape">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -171,6 +210,7 @@
                                     android:src="@drawable/db_balance"
                                     app:tint="#2196F3" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -183,8 +223,6 @@
                         </LinearLayout>
 
 
-
-
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="60dp"
@@ -192,11 +230,13 @@
                             android:layout_weight="0.1"
 
                             android:orientation="vertical">
+
                             <LinearLayout
-                                android:layout_gravity="center_horizontal"
-                                android:background="@drawable/circle_shape"
                                 android:layout_width="40dp"
-                                android:layout_height="40dp">
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_shape">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -204,6 +244,7 @@
                                     android:src="@drawable/db_balance"
                                     app:tint="#2196F3" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -234,11 +275,13 @@
                             android:layout_weight="0.1"
 
                             android:orientation="vertical">
+
                             <LinearLayout
-                                android:layout_gravity="center_horizontal"
-                                android:background="@drawable/circle_shape"
                                 android:layout_width="40dp"
-                                android:layout_height="40dp">
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_shape">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -246,6 +289,7 @@
                                     android:src="@drawable/db_balance"
                                     app:tint="#2196F3" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -265,11 +309,13 @@
                             android:layout_weight="0.1"
 
                             android:orientation="vertical">
+
                             <LinearLayout
-                                android:layout_gravity="center_horizontal"
-                                android:background="@drawable/circle_shape"
                                 android:layout_width="40dp"
-                                android:layout_height="40dp">
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_shape">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -277,6 +323,7 @@
                                     android:src="@drawable/db_balance"
                                     app:tint="#2196F3" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -296,11 +343,13 @@
                             android:layout_weight="0.1"
 
                             android:orientation="vertical">
+
                             <LinearLayout
-                                android:layout_gravity="center_horizontal"
-                                android:background="@drawable/circle_shape"
                                 android:layout_width="40dp"
-                                android:layout_height="40dp">
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_shape">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -308,6 +357,7 @@
                                     android:src="@drawable/db_balance"
                                     app:tint="#2196F3" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -320,8 +370,6 @@
                         </LinearLayout>
 
 
-
-
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="60dp"
@@ -329,11 +377,13 @@
                             android:layout_weight="0.1"
 
                             android:orientation="vertical">
+
                             <LinearLayout
-                                android:layout_gravity="center_horizontal"
-                                android:background="@drawable/circle_shape"
                                 android:layout_width="40dp"
-                                android:layout_height="40dp">
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_shape">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -341,6 +391,7 @@
                                     android:src="@drawable/db_balance"
                                     app:tint="#2196F3" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -356,7 +407,6 @@
                     </LinearLayout>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
         </androidx.cardview.widget.CardView>

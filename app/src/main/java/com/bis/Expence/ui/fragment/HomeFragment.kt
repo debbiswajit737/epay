@@ -149,13 +149,13 @@ class HomeFragment : BaseFragment(){
         iconList2.add(ListIcon("Card", R.drawable.sa2))
         iconList2.add(ListIcon("Card", R.drawable.sa3))
         iconList2.add(ListIcon("Card", R.drawable.sa4))
-        iconList2.add(ListIcon("Card", R.drawable.sa4))
+        iconList2.add(ListIcon("Card", R.drawable.sa2))
         iconList2.add(ListIcon("Card", R.drawable.sa5))
         binding.viewPager3.apply {
             autoScrollHandler = AutoScrollHandler(this)
             adapter = BannerViewpagerAdapter(iconList2)
         }
-
+        binding.tvMessage.isSelected = true
 
     }
     fun setupCarousel(
