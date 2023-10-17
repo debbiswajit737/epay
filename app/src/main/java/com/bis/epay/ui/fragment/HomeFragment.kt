@@ -15,6 +15,7 @@ import com.bis.epay.R
 
 import com.bis.epay.Utils.AutoScrollHandler
 import com.bis.epay.Utils.HorizontalMarginItemDecoration
+import com.bis.epay.data.adapter.BannerHeaderAdapter
 import com.bis.epay.data.adapter.BannerViewpagerAdapter
 import com.bis.epay.data.model.ListIcon
 import com.bis.epay.data.network.viewModel.MistryViewModel
@@ -51,6 +52,10 @@ class HomeFragment : BaseFragment() {
 
     private fun viewOnClick() {
         binding.apply {
+
+
+
+
             rotateView(arrowImageView, 0f)
             val collapseAnimation: Animation =
                 AnimationUtils.loadAnimation(requireActivity(), R.anim.collapse_animation)
@@ -188,7 +193,7 @@ class HomeFragment : BaseFragment() {
                 isRotated3 = !isRotated3
             }
 
-            arrowImageViewNew3.setOnClickListener {
+            /*arrowImageViewNew3.setOnClickListener {
 
                 if (isRotated3) {
 
@@ -218,7 +223,7 @@ class HomeFragment : BaseFragment() {
                 }
 
                 isRotated3 = !isRotated3
-            }
+            }*/
 
 
             arrowImageViewNew4.setOnClickListener {
@@ -269,26 +274,26 @@ class HomeFragment : BaseFragment() {
 
     fun init() {
 
+        iconList.add(ListIcon("Card", R.drawable.wb1))
+        iconList.add(ListIcon("Card", R.drawable.wb2))
+        iconList.add(ListIcon("Card", R.drawable.wb3))
+        iconList.add(ListIcon("Card", R.drawable.wb4))
         iconList.add(ListIcon("Card", R.drawable.bb1))
-        iconList.add(ListIcon("Card", R.drawable.b3))
+        iconList.add(ListIcon("Card", R.drawable.card2))
         iconList.add(ListIcon("Card", R.drawable.card))
         iconList.add(ListIcon("Card", R.drawable.card2))
-        iconList.add(ListIcon("Card", R.drawable.bb1))
-        iconList.add(ListIcon("Card", R.drawable.card2))
-        iconList.add(ListIcon("Card", R.drawable.card))
-        iconList.add(ListIcon("Card", R.drawable.card2))
-        iconList.add(ListIcon(null, null))
 
+        binding.recycleViewHeader.adapter= BannerHeaderAdapter(iconList)
 
-        binding.viewPager2.apply {
+        /*binding.viewPager2.apply {
             val scaleMin = 0.32f // Minimum scale
             val scaleMax = 0.45f // Maximum scale
             setupCarousel(this, scaleMin, scaleMax)
             //offscreenPageLimit = 3
-            /* setPageTransformer { page, position ->
+            *//* setPageTransformer { page, position ->
                  page.translationX =
                      -position * (page.width / 3f)
-             }*/
+             }*//*
             adapter = BannerViewpagerAdapter(iconList)
 
             currentItem = 2
@@ -308,7 +313,7 @@ class HomeFragment : BaseFragment() {
                 }
             })
 
-        }
+        }*/
 
 
 
