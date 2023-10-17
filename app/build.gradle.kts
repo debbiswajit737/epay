@@ -15,7 +15,7 @@ plugins {
 
 
 android {
-    namespace = "com.bis.Expence"
+    namespace = "com.bis.epay"
     compileSdk = 34
 
     defaultConfig {

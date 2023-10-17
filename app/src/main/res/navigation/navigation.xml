@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.bis.Expence.ui.fragment.HomeFragment"
+        android:name="com.bis.epay.ui.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/constractionFragment"
-        android:name="com.bis.Expence.ui.fragment.ConstractionFragment"
+        android:name="com.bis.epay.ui.fragment.ConstractionFragment"
         android:label="fragment_constraction"
         tools:layout="@layout/fragment_constraction" >
         <action
@@ -21,17 +21,17 @@
     </fragment>
     <fragment
         android:id="@+id/dailyFragment"
-        android:name="com.bis.Expence.ui.fragment.DailyFragment"
+        android:name="com.bis.epay.ui.fragment.DailyFragment"
         android:label="fragment_daily"
         tools:layout="@layout/fragment_daily" />
     <fragment
         android:id="@+id/groceryFragment"
-        android:name="com.bis.Expence.ui.fragment.GroceryFragment"
+        android:name="com.bis.epay.ui.fragment.GroceryFragment"
         android:label="fragment_grocery"
         tools:layout="@layout/fragment_grocery" />
     <fragment
         android:id="@+id/addConstractionFragment"
-        android:name="com.bis.Expence.ui.fragment.AddConstractionFragment"
+        android:name="com.bis.epay.ui.fragment.AddConstractionFragment"
         android:label="fragment_add_constraction"
         tools:layout="@layout/fragment_add_constraction" />
 </navigation>
