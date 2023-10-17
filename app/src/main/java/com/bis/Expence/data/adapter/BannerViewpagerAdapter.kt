@@ -44,8 +44,9 @@ class BannerViewpagerAdapter(private val items: List<ListIcon>) : RecyclerView.A
         }
 
         fun bind(item: ListIcon) {
-            binding.imgBanner.setImageResource(item.image)
-
+            item.image?.let {image->
+                binding.imgBanner.setImageResource(image)
+            }
         }
     }
 

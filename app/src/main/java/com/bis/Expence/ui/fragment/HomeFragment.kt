@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemClickListener
 import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
+import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 
 import com.bis.Expence.R
 import com.bis.Expence.Utils.AutoScrollHandler
@@ -20,11 +23,14 @@ import com.bis.Expence.databinding.FragmentHomeBinding
 import com.bis.Expence.ui.base.BaseFragment
 
 
-class HomeFragment : BaseFragment(){
+class HomeFragment : BaseFragment() {
     private var isRotated = true
     private var isRotated2 = true
-    var iconList= ArrayList<ListIcon>()
-    var iconList2= ArrayList<ListIcon>()
+    private var isRotated3 = true
+    private var isRotated4 = true
+    private var isRotated5 = true
+    var iconList = ArrayList<ListIcon>()
+    var iconList2 = ArrayList<ListIcon>()
     lateinit var binding: FragmentHomeBinding
     private lateinit var autoScrollHandler: AutoScrollHandler
     private val mistryViewModel: MistryViewModel by activityViewModels()
@@ -36,7 +42,7 @@ class HomeFragment : BaseFragment(){
         /*binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         binding.lifecycleOwner = this*/
 
-        binding= FragmentHomeBinding.inflate(layoutInflater)
+        binding = FragmentHomeBinding.inflate(layoutInflater)
         val view = binding.root
         init()
         viewOnClick()
@@ -46,8 +52,9 @@ class HomeFragment : BaseFragment(){
     private fun viewOnClick() {
         binding.apply {
             rotateView(arrowImageView, 0f)
-            val collapseAnimation: Animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.collapse_animation)
-            arrowImageView.setOnClickListener{
+            val collapseAnimation: Animation =
+                AnimationUtils.loadAnimation(requireActivity(), R.anim.collapse_animation)
+            arrowImageView.setOnClickListener {
 
                 if (isRotated) {
 
@@ -67,7 +74,12 @@ class HomeFragment : BaseFragment(){
                     layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
                     llContainer.layoutParams = layoutParams
                     llContainer.visibility = View.VISIBLE
-                    llContainer.startAnimation(AnimationUtils.loadAnimation(requireActivity(), R.anim.expand_animation))
+                    llContainer.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            requireActivity(),
+                            R.anim.expand_animation
+                        )
+                    )
 
                 }
 
@@ -76,7 +88,7 @@ class HomeFragment : BaseFragment(){
 
 
 
-            arrowImageView2.setOnClickListener{
+            arrowImageView2.setOnClickListener {
 
                 if (isRotated2) {
 
@@ -96,7 +108,12 @@ class HomeFragment : BaseFragment(){
                     layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
                     linearLayout.layoutParams = layoutParams
                     linearLayout.visibility = View.VISIBLE
-                    linearLayout.startAnimation(AnimationUtils.loadAnimation(requireActivity(), R.anim.expand_animation))
+                    linearLayout.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            requireActivity(),
+                            R.anim.expand_animation
+                        )
+                    )
 
                 }
 
@@ -106,6 +123,136 @@ class HomeFragment : BaseFragment(){
 
 
 
+            arrowImageViewNew2.setOnClickListener {
+
+                if (isRotated3) {
+
+                    rotateView(arrowImageViewNew2, 0f)
+
+
+                    val layoutParams = linearLayoutNew2.layoutParams
+                    layoutParams.height = 40
+                    linearLayoutNew2.layoutParams = layoutParams
+                    linearLayoutNew2.startAnimation(collapseAnimation)
+
+                    linearLayoutNew2.visibility = View.INVISIBLE
+
+                } else {
+                    rotateView(arrowImageViewNew2, 180f)
+                    val layoutParams = linearLayoutNew2.layoutParams
+                    layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                    linearLayoutNew2.layoutParams = layoutParams
+                    linearLayoutNew2.visibility = View.VISIBLE
+                    linearLayoutNew2.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            requireActivity(),
+                            R.anim.expand_animation
+                        )
+                    )
+
+                }
+
+                isRotated3 = !isRotated3
+            }
+
+
+            arrowImageViewNew2.setOnClickListener {
+
+                if (isRotated3) {
+
+                    rotateView(arrowImageViewNew2, 0f)
+
+
+                    val layoutParams = linearLayoutNew2.layoutParams
+                    layoutParams.height = 40
+                    linearLayoutNew2.layoutParams = layoutParams
+                    linearLayoutNew2.startAnimation(collapseAnimation)
+
+                    linearLayoutNew2.visibility = View.INVISIBLE
+
+                } else {
+                    rotateView(arrowImageViewNew2, 180f)
+                    val layoutParams = linearLayoutNew2.layoutParams
+                    layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                    linearLayoutNew2.layoutParams = layoutParams
+                    linearLayoutNew2.visibility = View.VISIBLE
+                    linearLayoutNew2.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            requireActivity(),
+                            R.anim.expand_animation
+                        )
+                    )
+
+                }
+
+                isRotated3 = !isRotated3
+            }
+
+            arrowImageViewNew3.setOnClickListener {
+
+                if (isRotated3) {
+
+                    rotateView(arrowImageViewNew3, 0f)
+
+
+                    val layoutParams = linearLayoutNew3.layoutParams
+                    layoutParams.height = 40
+                    linearLayoutNew3.layoutParams = layoutParams
+                    linearLayoutNew3.startAnimation(collapseAnimation)
+
+                    linearLayoutNew3.visibility = View.INVISIBLE
+
+                } else {
+                    rotateView(arrowImageViewNew3, 180f)
+                    val layoutParams = linearLayoutNew3.layoutParams
+                    layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                    linearLayoutNew3.layoutParams = layoutParams
+                    linearLayoutNew3.visibility = View.VISIBLE
+                    linearLayoutNew3.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            requireActivity(),
+                            R.anim.expand_animation
+                        )
+                    )
+
+                }
+
+                isRotated3 = !isRotated3
+            }
+
+
+            arrowImageViewNew4.setOnClickListener {
+
+                if (isRotated3) {
+
+                    rotateView(arrowImageViewNew4, 0f)
+
+
+                    val layoutParams = linearLayoutNew4.layoutParams
+                    layoutParams.height = 40
+                    linearLayoutNew4.layoutParams = layoutParams
+                    linearLayoutNew4.startAnimation(collapseAnimation)
+
+                    linearLayoutNew4.visibility = View.INVISIBLE
+
+                } else {
+                    rotateView(arrowImageViewNew4, 180f)
+                    val layoutParams = linearLayoutNew4.layoutParams
+                    layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                    linearLayoutNew4.layoutParams = layoutParams
+                    linearLayoutNew4.visibility = View.VISIBLE
+                    linearLayoutNew4.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            requireActivity(),
+                            R.anim.expand_animation
+                        )
+                    )
+
+                }
+
+                isRotated3 = !isRotated3
+            }
+
 
 
 
@@ -113,37 +260,60 @@ class HomeFragment : BaseFragment(){
 
 
     }
+
     private fun rotateView(view: View, degrees: Float) {
         val rotation = ObjectAnimator.ofFloat(view, "rotation", degrees)
         rotation.duration = 500 // Adjust the duration as needed
         rotation.start()
     }
-    fun init(){
 
-            iconList.add(ListIcon("Card", R.drawable.bb1))
-            iconList.add(ListIcon("Card", R.drawable.b3))
-            iconList.add(ListIcon("Card", R.drawable.card))
-            iconList.add(ListIcon("Card", R.drawable.card2))
-            iconList.add(ListIcon("Card", R.drawable.bb1))
-            iconList.add(ListIcon("Card", R.drawable.card2))
-            iconList.add(ListIcon("Card", R.drawable.card))
-            iconList.add(ListIcon("Card", R.drawable.card2))
+    fun init() {
+
+        iconList.add(ListIcon("Card", R.drawable.bb1))
+        iconList.add(ListIcon("Card", R.drawable.b3))
+        iconList.add(ListIcon("Card", R.drawable.card))
+        iconList.add(ListIcon("Card", R.drawable.card2))
+        iconList.add(ListIcon("Card", R.drawable.bb1))
+        iconList.add(ListIcon("Card", R.drawable.card2))
+        iconList.add(ListIcon("Card", R.drawable.card))
+        iconList.add(ListIcon("Card", R.drawable.card2))
+        iconList.add(ListIcon(null, null))
 
 
-            binding.viewPager2.apply {
-                val scaleMin = 0.32f // Minimum scale
-                val scaleMax = 0.45f // Maximum scale
-                setupCarousel(this,scaleMin, scaleMax)
-                //offscreenPageLimit = 3
-                /* setPageTransformer { page, position ->
-                     page.translationX =
-                         -position * (page.width / 3f)
-                 }*/
-                adapter = BannerViewpagerAdapter(iconList)
+        binding.viewPager2.apply {
+            val scaleMin = 0.32f // Minimum scale
+            val scaleMax = 0.45f // Maximum scale
+            setupCarousel(this, scaleMin, scaleMax)
+            //offscreenPageLimit = 3
+            /* setPageTransformer { page, position ->
+                 page.translationX =
+                     -position * (page.width / 3f)
+             }*/
+            adapter = BannerViewpagerAdapter(iconList)
 
-                currentItem = 2
+            currentItem = 2
 
-            }
+
+            registerOnPageChangeCallback(object : OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    // Check if the user scrolls to the first or last item, then perform looping.
+                    if (position == 0) {
+                        // Scroll to the last item.
+                        // currentItem=adapter?.itemCount?.minus(1) ?: 0
+                        // binding.viewPager2.setCurrentItem(adapter.getItemCount() - 1, false)
+                    } else if (position == (adapter?.itemCount ?: 0)) {
+                        // Scroll to the first item.
+                        binding.viewPager2.setCurrentItem(0, false)
+                    }
+                }
+            })
+
+        }
+
+
+
+
+
 
         iconList2.add(ListIcon("Card", R.drawable.sa1))
         iconList2.add(ListIcon("Card", R.drawable.sa2))
@@ -158,6 +328,7 @@ class HomeFragment : BaseFragment(){
         binding.tvMessage.isSelected = true
 
     }
+
     fun setupCarousel(
         viewPager: ViewPager2,
         minScale: Float = 0.35f,
@@ -209,4 +380,6 @@ class HomeFragment : BaseFragment(){
         super.onPause()
         autoScrollHandler.stopAutoScroll()
     }
+
+
 }
